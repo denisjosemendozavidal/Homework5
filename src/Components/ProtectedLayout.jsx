@@ -6,7 +6,7 @@ const ProtectedLayout = () => {
 
   const userInfo = useSelector(state => state.userName)
 
-  console.log(userInfo);
+  
 
   if (userInfo) {
     return <Outlet/>
