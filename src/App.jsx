@@ -21,7 +21,7 @@ function App() {
 
           <Route element={<ProtectedLayout/>}>
             <Route path='/pokedex' element={<Pokedex/>} />
-            <Route path='pokedex/:id' element={<PokedexId/>} />
+            <Route path='/pokedex/:id/' element={<PokedexId/>} />
           </Route>
       </Routes>
     </div>

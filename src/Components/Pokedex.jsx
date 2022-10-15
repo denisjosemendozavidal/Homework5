@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import PokemonCard from './PokemonCard'
 
 const Pokedex = () => {
@@ -18,21 +19,29 @@ const Pokedex = () => {
 
   }, [])
 
+  const navigate = useNavigate()
+
+  const submit = (e) => {
+    e.preventDefault()
+    navigate(`/pokedex/${e.target.search.value}`)
+  }
+
   
   return (
     <div className='pokedex'>
       <header className='pokedex-header'>
         <h1 className='pokedex-header-title'>Pokedex</h1>
         <p className='pokedex-header-message'>Welcome: <span>{userName}</span>, find your favorite pokemons here.!</p>
-        <form className='pokedex-header-input-and-select'>
-          <input className='pokedex-header-input' type="text" placeholder='Name your favorite Pokemon here.!' />
+        <form onSubmit={submit} className='pokedex-header-input-and-select'>
+          <input className='pokedex-header-input' type="text" placeholder='Name your favorite Pokemon here.!' id='search'/>
+          <button>Find it.!</button>
           <h3> or </h3>
           <input className='pokedex-header-select' type="text" placeholder='' />
         </form>
       </header>
         {
           pokemonlist?.map(pokemon => (
-            <PokemonCard pokemon={pokemon}/>
+            <PokemonCard key={pokemon.url} pokemon={pokemon}/>
           ))
         }
     </div>

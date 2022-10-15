@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const PokemonCard = ({pokemon}) => {
 
@@ -24,13 +25,20 @@ const PokemonCard = ({pokemon}) => {
 
     }, [])
 
-    
+    /*console.log(pokemonCardInfo.id);*/
+
+    const navigate = useNavigate()
+
+    const handleCLick = (e) => {
+      navigate(`/pokedex/${pokemonCardInfo?.id}/`)
+      
+    }
     
     
 
   return (
     
-    <article className='pokecard'>  
+    <article onClick={handleCLick} className='pokecard'>  
         <h1 className='pokecard-tittle'>{`${nameUpper}`}</h1>
         <img className='pokecard-pic' src={`${pokemonCardInfo?.sprites.other.dream_world.front_default}`} alt="" />
     </article>
