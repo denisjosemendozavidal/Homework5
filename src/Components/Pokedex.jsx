@@ -18,13 +18,15 @@ const Pokedex = () => {
       axios.get(selectedtype)
         .then(res => console.log(res.data.pokemon))
         .catch(err => console.log(err))
+    } else {
+        const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50`
+    
+        axios.get(url)
+          .then(res => setPokemonlist(res.data.results))
+          .catch(err => console.log(err))
+
     }
     
-    const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50`
-
-    axios.get(url)
-      .then(res => setPokemonlist(res.data.results))
-      .catch(err => console.log(err))
 
   }, [selectedtype])
 
