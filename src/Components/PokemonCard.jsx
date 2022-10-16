@@ -10,6 +10,10 @@ const PokemonCard = ({pokemon, selectedtype}) => {
     every pokemons info. Pokelist is the total number, pokecard is the specs of each one*/ 
 
     const [pokemonCardInfo, setPokemonCardInfo] = useState()
+    
+
+    
+
 
     useEffect(() => {
       
@@ -41,7 +45,7 @@ const PokemonCard = ({pokemon, selectedtype}) => {
     
     <article onClick={handleCLick} className='pokecard'>  
         <h1 className='pokecard-tittle'>{`${nameUpper}`}</h1>
-        <img className='pokecard-pic' src={`${pokemonCardInfo?.sprites.other.dream_world.front_default}`} alt="" />
+        <img className='pokecard-pic' src={`${pokemonCardInfo?.sprites.other[`official-artwork`].front_default}`} alt="" />
     </article>
   )
 }

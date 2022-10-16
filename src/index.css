@@ -83,3 +83,10 @@
                     transition: 0.5s ease-in-out;
                     color: transparent;
                 }
+
+
+    .pressed {
+        background-color: blue;
+        color: white;
+        }
+                  

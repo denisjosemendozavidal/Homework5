@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Pagination from './Pagination'
 import PokemonCard from './PokemonCard'
 import SelectBytype from './SelectBytype'
 
@@ -11,6 +12,8 @@ const Pokedex = () => {
 
   const [pokemonlist, setPokemonlist] = useState()
   const [selectedtype, setSelectedtype] = useState("AllTypes") 
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage, setPostsPerPage] = useState(10)
 
   useEffect(() => {
 
@@ -39,7 +42,10 @@ const Pokedex = () => {
     navigate(`/pokedex/${e.target.search.value.trim().toLowerCase()}`)
   }
 
-  
+  const lastPostIndex = currentPage * postsPerPage
+  const firstPostIndex = lastPostIndex - postsPerPage
+  const currentPost = pokemonlist?.slice(firstPostIndex, lastPostIndex)
+  const totalPosts = pokemonlist?.length
 
   return (
     <div className='pokedex'>
@@ -53,8 +59,9 @@ const Pokedex = () => {
           <SelectBytype setSelectedtype={setSelectedtype} selectedtype={selectedtype}/>
         </form>
       </header>
+      <Pagination totalPosts={totalPosts} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         {
-          pokemonlist?.map(pokemon => (
+          currentPost?.map(pokemon => (
             <PokemonCard key={pokemon.url} pokemon={pokemon} selectedtype={selectedtype}/>
           ))
         }
