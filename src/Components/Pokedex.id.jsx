@@ -18,12 +18,11 @@ const Pokedexid = () => {
 
   }, [])
 
-  console.log(idlower);
   
   return (
     <article>
       <img src={poke?.sprites.other.dream_world.front_default} alt="" />
-
+      <h1>{`${poke?.name}`}</h1>
     </article>
   )
 }
