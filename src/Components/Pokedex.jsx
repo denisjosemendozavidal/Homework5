@@ -10,16 +10,23 @@ const Pokedex = () => {
   const userName = useSelector(state => state.userName)
 
   const [pokemonlist, setPokemonlist] = useState()
-  const [selectedtype, setSelectedtype] = useState() 
+  const [selectedtype, setSelectedtype] = useState("AllTypes") 
 
   useEffect(() => {
+
+    if (selectedtype !== "AllTypes") {
+      axios.get(selectedtype)
+        .then(res => console.log(res.data.pokemon))
+        .catch(err => console.log(err))
+    }
+    
     const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50`
 
     axios.get(url)
       .then(res => setPokemonlist(res.data.results))
       .catch(err => console.log(err))
 
-  }, [])
+  }, [selectedtype])
 
   const navigate = useNavigate()
 
@@ -28,7 +35,7 @@ const Pokedex = () => {
     navigate(`/pokedex/${e.target.search.value.trim().toLowerCase()}`)
   }
 
-  console.log(selectedtype);
+  
 
   return (
     <div className='pokedex'>
@@ -39,12 +46,12 @@ const Pokedex = () => {
           <input className='pokedex-header-input' type="text" placeholder='Name your favorite Pokemon here.!' id='search'/>
           <button>Find it.!</button>
           <h3> or try to find it by type:</h3>
-          <SelectBytype setSelectedtype={setSelectedtype}/>
+          <SelectBytype setSelectedtype={setSelectedtype} selectedtype={selectedtype}/>
         </form>
       </header>
         {
           pokemonlist?.map(pokemon => (
-            <PokemonCard key={pokemon.url} pokemon={pokemon}/>
+            <PokemonCard key={pokemon.url} pokemon={pokemon} selectedtype={selectedtype}/>
           ))
         }
     </div>

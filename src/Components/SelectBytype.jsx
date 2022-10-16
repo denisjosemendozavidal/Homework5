@@ -6,6 +6,7 @@ const SelectBytype = ({setSelectedtype}) => {
     const [typeOptions, setTypeOptions] = useState()
 
     useEffect(() => {
+        
         const url = `https://pokeapi.co/api/v2/type`
 
         axios.get(url)

@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const PokemonCard = ({pokemon}) => {
+const PokemonCard = ({pokemon, selectedtype}) => {
 
     const [nameUpper, setNameUpper] = useState()
 
@@ -12,6 +12,7 @@ const PokemonCard = ({pokemon}) => {
     const [pokemonCardInfo, setPokemonCardInfo] = useState()
 
     useEffect(() => {
+      
         const url = `${pokemon.url}`
         axios.get(url)
             .then(res => setPokemonCardInfo(res.data))
