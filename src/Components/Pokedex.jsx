@@ -3,12 +3,14 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import PokemonCard from './PokemonCard'
+import SelectBytype from './SelectBytype'
 
 const Pokedex = () => {
 
   const userName = useSelector(state => state.userName)
 
   const [pokemonlist, setPokemonlist] = useState()
+  const [selectedtype, setSelectedtype] = useState() 
 
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50`
@@ -23,10 +25,11 @@ const Pokedex = () => {
 
   const submit = (e) => {
     e.preventDefault()
-    navigate(`/pokedex/${e.target.search.value}`)
+    navigate(`/pokedex/${e.target.search.value.trim().toLowerCase()}`)
   }
 
-  
+  console.log(selectedtype);
+
   return (
     <div className='pokedex'>
       <header className='pokedex-header'>
@@ -35,8 +38,8 @@ const Pokedex = () => {
         <form onSubmit={submit} className='pokedex-header-input-and-select'>
           <input className='pokedex-header-input' type="text" placeholder='Name your favorite Pokemon here.!' id='search'/>
           <button>Find it.!</button>
-          <h3> or </h3>
-          <input className='pokedex-header-select' type="text" placeholder='' />
+          <h3> or try to find it by type:</h3>
+          <SelectBytype setSelectedtype={setSelectedtype}/>
         </form>
       </header>
         {
