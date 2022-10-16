@@ -16,10 +16,12 @@ const Pokedex = () => {
 
     if (selectedtype !== "AllTypes") {
       axios.get(selectedtype)
-        .then(res => console.log(res.data.pokemon))
+        .then(res => {
+          const results = res.data.pokemon.map(e => e.pokemon)
+          setPokemonlist(results)})
         .catch(err => console.log(err))
     } else {
-        const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50`
+        const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100`
     
         axios.get(url)
           .then(res => setPokemonlist(res.data.results))
