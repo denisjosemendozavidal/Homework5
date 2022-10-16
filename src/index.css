@@ -92,12 +92,13 @@
         }
 
 .pokedex {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: flex-start;
-    background-image: url("../images/pokedex-with-pokeballs.jpg");
+    
+    background-image: url("../images/pokedex.gif");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 1%;
@@ -106,32 +107,137 @@
     .pokedex-header {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-end;
+        align-content: center;
+        height: 100%;
+        width: 40%;
+        gap: 20%;
+        
     }
 
         .pokedex-header-message {
-            font-size: xx-large;
-            color: var(--colorDarkWhite);
+            font-size: 3rem;
+            color: var(--pokedexRed);
+            width: 50%;
+            height: 20%;
+            margin: 6%;
+            padding: 5%;
+            justify-content: flex-start;
+            font-family: verdana;
+            text-align: center;
+            animation: blinking 5s ease-in-out alternate infinite;
+            
         }
 
+            @keyframes blinking {
+                0% {
+                    opacity: 0;
+                    
+                }
+
+                100% {
+                    opacity: 100%;
+                    
+                }
+            }
+
+
+
+
         .pokedex-header-input-and-select {
-            width: 100%;
+            width: 70%;
+            height: 1%;
             height: fit-content;
             display: flex;
-            gap: 1%;
+            flex-direction: column;
+            gap: 3%;
             justify-content: center;
+            align-items: center;
             color: var(--colorDarkWhite);
             font-size: x-large;
-            color: var(--pokedexRed);
+            margin-top: 7%;
+            
         }
 
             .pokedex-header-input {
-                width: 17%;
+                width: 75%;
                 text-align: center;
                 font-size: large;
                 font-weight: bolder;
+                font-family: verdana;
                 background-color: transparent;
                 border-radius: 20px;
+                padding: 1%;
+                margin: 3%;
+                transition: 1s ease-in-out;
+                color: var(--colorDarkWhite);
             }
+
+                .pokedex-header-input:hover {
+                    border: solid var(--pokedexRed);
+                    transition: 1s ease-in-out;
+                }
+
+            .pokedex-header-input-and-select > button {
+                font-size: large;
+                font-weight: lighter;
+                font-family: verdana;
+                padding: 2%;
+                border-radius: 20px;
+                color:var(--colorDarkWhite);
+                border: transparent;
+                background-color: transparent;
+                margin-bottom: 4%;
+                transition: 1s ease-in-out;
+            }
+
+                .pokedex-header-input-and-select > button:hover {
+                    background-image: url("../images/pokeballs-falling.gif");
+                    color: transparent; 
+                    transition: 1s ease-in-out;
+                }
+
+            .pokedex-header-span-select > span {
+                font-family: Verdana;
+            }
+
+            .pokedex-header-select {
+                font-family: Verdana;
+                padding: 3%;
+                align-self: center;
+                text-align: center;
+                width: 25%;
+                border-radius: 20px;
+                background: transparent;
+                color: var(--colorDarkWhite);
+                font-size: large;
+                transition: 1s ease-in-out;
+            }
+
+                .pokedex-header-select:hover {
+                    color: var(--pokedexRed);
+                    transition: 1s ease-in-out;
+                }
+
+    .pokedex-body {
+        height: 100%;
+        width: 70%;
+        
+    }
+
+        .poke-card-wrapper {
+            
+            width: 100%;
+            height: 80%;
+            align-self:flex-end;
+            padding: 2%;
+            overflow-y: scroll;
+        }
+
+        .pagination-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 1%;
+        }
                   

@@ -50,21 +50,29 @@ const Pokedex = () => {
   return (
     <div className='pokedex'>
       <header className='pokedex-header'>
-        <p className='pokedex-header-message'>Welcome: <span>{userName}</span>, find your favorite pokemons here.!</p>
+        <p className='pokedex-header-message'>Welcome: <span>{userName}</span></p>
         <form onSubmit={submit} className='pokedex-header-input-and-select'>
           <input className='pokedex-header-input' type="text" placeholder='Name your favorite Pokemon here.!' id='search'/>
-          <button>Find it.!</button>
-          <h3> or try by type: </h3>
-          <SelectBytype setSelectedtype={setSelectedtype} selectedtype={selectedtype}/>
+          <button>Click here to find it.!</button>
+          <div className='pokedex-header-span-select'>
+            <span>or try by type: </span>
+            <SelectBytype setSelectedtype={setSelectedtype} selectedtype={selectedtype}/>
+          </div>
         </form>
       </header>
       <div className='pokedex-body'>
-        <Pagination totalPosts={totalPosts} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
-          {
-            currentPost?.map(pokemon => (
-              <PokemonCard key={pokemon.url} pokemon={pokemon} selectedtype={selectedtype}/>
-            ))
-          }
+        
+        <div className='poke-card-wrapper'>
+            {
+              currentPost?.map(pokemon => (
+                <PokemonCard key={pokemon.url} pokemon={pokemon} selectedtype={selectedtype}/>
+              ))
+            }
+
+        </div>
+        <div className='pagination-wrapper'>
+          <Pagination totalPosts={totalPosts} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+        </div>
       </div>
     </div>
   )

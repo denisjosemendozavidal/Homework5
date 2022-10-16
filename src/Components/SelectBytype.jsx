@@ -20,7 +20,7 @@ const SelectBytype = ({setSelectedtype}) => {
     }
 
   return (
-    <select onChange={handleClickOnSelect}>
+    <select className='pokedex-header-select' onChange={handleClickOnSelect}>
         <option value="AllTypes">All Types</option>
         {
             typeOptions?.map (type => (
