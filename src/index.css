@@ -36,10 +36,6 @@
         
     }
 
-        .home:hover{
-            
-        }
-
         .home > form {
             width: 100%;
             height: 100%;
@@ -62,7 +58,13 @@
                 color: var(--colorDarkWhite);
                 font-family: verdana;
                 font-weight: lighter;
+                transition: 0.5s ease-in-out;
             }
+
+                .home > form > input:hover {
+                    border: solid black;
+                    transition: 0.5s ease-in-out;
+                }
 
             .home > form > button {
                 width: 50%;
@@ -72,6 +74,7 @@
                 font-size: xx-large;
                 background-color: transparent;
                 color: var(--colorDarkWhite);
+                border: transparent;
                 transition: 0.5s ease-in-out;
             }
 
