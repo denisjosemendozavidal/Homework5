@@ -6,6 +6,7 @@
 
 :root {
     --colorDarkWhite: #FAF7F0; 
+    --pokedexRed: #AC2820;
 }
 
 .App{
@@ -89,4 +90,48 @@
         background-color: blue;
         color: white;
         }
+
+.pokedex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-image: url("../images/pokedex-with-pokeballs.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 1%;
+}
+
+    .pokedex-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .pokedex-header-message {
+            font-size: xx-large;
+            color: var(--colorDarkWhite);
+        }
+
+        .pokedex-header-input-and-select {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            gap: 1%;
+            justify-content: center;
+            color: var(--colorDarkWhite);
+            font-size: x-large;
+            color: var(--pokedexRed);
+        }
+
+            .pokedex-header-input {
+                width: 17%;
+                text-align: center;
+                font-size: large;
+                font-weight: bolder;
+                background-color: transparent;
+                border-radius: 20px;
+            }
                   
