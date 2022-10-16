@@ -16,14 +16,14 @@ const Home = () => {
   }
 
   return (
-    <div className='home'>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="UserName">Your name: </label>
-      <input type="text" id='UserName'/>
-      <button>Continue</button>
-    </form>
-      
-    </div>
+    <article className='home-container'>
+      <div className='home'>
+        <form onSubmit={handleSubmit}>
+          <input type="text" id='UserName' placeholder='What is your name trainer?'/>
+          <button>Continue...</button>
+        </form>
+      </div>
+    </article>
   )
 }
 

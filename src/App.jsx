@@ -15,7 +15,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Poke</h1>
       <Routes>
           <Route path='/' element={<Home/>}/>
 
