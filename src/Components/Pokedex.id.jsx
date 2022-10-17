@@ -27,68 +27,7 @@ const Pokedexid = () => {
     return <Pokemon404/>
   }
 
-  /*0
-: 
-
-1
-: 
-
-2
-: 
-{name: 'flying', url: 'https://pokeapi.co/api/v2/type/3/'}
-3
-: 
-{name: 'poison', url: 'https://pokeapi.co/api/v2/type/4/'}
-4
-: 
-{name: 'ground', url: 'https://pokeapi.co/api/v2/type/5/'}
-5
-: 
-{name: 'rock', url: 'https://pokeapi.co/api/v2/type/6/'}
-6
-: 
-{name: 'bug', url: 'https://pokeapi.co/api/v2/type/7/'}
-7
-: 
-{name: 'ghost', url: 'https://pokeapi.co/api/v2/type/8/'}
-8
-: 
-{name: 'steel', url: 'https://pokeapi.co/api/v2/type/9/'}
-9
-: 
-
-10
-: 
-{name: 'water', url: 'https://pokeapi.co/api/v2/type/11/'}
-11
-: 
-
-12
-: 
-{name: 'electric', url: 'https://pokeapi.co/api/v2/type/13/'}
-13
-: 
-
-14
-: 
-
-15
-: 
-
-16
-: 
-
-17
-: 
-
-18
-: 
-
-19
-: 
-
-
-*/ 
+ 
 
 
   useEffect(() => {
@@ -97,41 +36,41 @@ const Pokedexid = () => {
     } else if (poke?.types[0].type.name === "grass") {
       setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "normal") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #9F8772, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "fighting") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #9E7676, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "shadow") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #181818, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "unknown") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #002E94, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "fairy") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #FFCACA, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "dark") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #181818, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "dragon") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #FF1E1E, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "ice") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #3330E4, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "psychic") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #C47AFF, #EFEFEF)`)
     } else if (poke?.types[0].type.name === "electric") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
-    } else if (poke?.types[0].type.name === "fire") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
-    } else if (poke?.types[0].type.name === "fire") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
-    } else if (poke?.types[0].type.name === "fire") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
-    } else if (poke?.types[0].type.name === "fire") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
-    } else if (poke?.types[0].type.name === "fire") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
-    } else if (poke?.types[0].type.name === "fire") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
-    } else if (poke?.types[0].type.name === "fire") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
-    } else if (poke?.types[0].type.name === "fire") {
-      setBackground(`linear-gradient(180deg, #367E18, #EFEFEF)`)
+      setBackground(`linear-gradient(180deg, #FCE700, #EFEFEF)`)
+    } else if (poke?.types[0].type.name === "water") {
+      setBackground(`linear-gradient(180deg, #3330E4, #EFEFEF)`)
+    } else if (poke?.types[0].type.name === "steel") {
+      setBackground(`linear-gradient(180deg, #413F42, #EFEFEF)`)
+    } else if (poke?.types[0].type.name === "bug") {
+      setBackground(`linear-gradient(180deg, #9F8772, #EFEFEF)`)
+    } else if (poke?.types[0].type.name === "ghost") {
+      setBackground(`linear-gradient(180deg, #25316D, #EFEFEF)`)
+    } else if (poke?.types[0].type.name === "rock") {
+      setBackground(`linear-gradient(180deg, #472D2D, #EFEFEF)`)
+    } else if (poke?.types[0].type.name === "ground") {
+      setBackground(`linear-gradient(180deg, #9F8772, #EFEFEF)`)
+    } else if (poke?.types[0].type.name === "poison") {
+      setBackground(`linear-gradient(180deg, #3F0071, #EFEFEF)`)
+    } else if (poke?.types[0].type.name === "flying") {
+      setBackground(`linear-gradient(180deg, #9E7676, #EFEFEF)`)
     }
   }, [poke])
 
