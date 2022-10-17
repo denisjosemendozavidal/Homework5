@@ -19,6 +19,8 @@ const SelectBytype = ({setSelectedtype}) => {
         setSelectedtype(e.target.value);
     }
 
+    
+
   return (
     <select className='pokedex-header-select' onChange={handleClickOnSelect}>
         <option value="AllTypes">All Types</option>
