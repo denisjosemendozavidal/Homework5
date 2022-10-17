@@ -27,10 +27,17 @@ const Pokedexid = () => {
   }
 
   
+  
   return (
-    <article>
+    <article className='pokedex-id-wrapper'>
       <img src={poke?.sprites.other.dream_world.front_default} alt="" />
       <h1>{`${poke?.name}`}</h1>
+      {
+        poke?.moves.map(move => (
+          <li key={move.move.name}>{move.move.name}</li>
+        ))
+      }
+      
     </article>
   )
 }

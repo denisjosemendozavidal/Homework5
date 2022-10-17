@@ -220,14 +220,13 @@
     }
 
         .poke-card-wrapper {
-            width: 100%;
+            width: 99%;
             height: 80%;
             align-self:flex-end;
             padding: 2%;
             overflow-y: scroll;
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-start;
             
         }
 
@@ -241,6 +240,7 @@
                 padding: 1%;
                 border-radius: 20px;
                 transition: 0.5s ease-in-out;
+                background-color: transparent;
             }
 
                 .pokecard:hover {
@@ -257,7 +257,7 @@
 
                 .pokecard > img {
                     height: 80%;
-                    
+                    width: 50%;
                 }
 
                     .pokecard > img:hover {
@@ -285,8 +285,10 @@
             .pagination-buttons {
                 height: 80%;
                 width: 100%;
-                
                 display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
                 flex-wrap: wrap;
                 justify-content: space-evenly;
 
@@ -309,5 +311,36 @@
                     transition: 0.5s ease-in;
                 }
 
-       
+/*Styles for the scroll bar start here*/
+
+              /* width */
+              ::-webkit-scrollbar {
+                width: 10px;
+                
+              }
+
+              /* Track */
+              ::-webkit-scrollbar-track {
+                background: transparent;
+              }
+
+              /* Handle */
+              ::-webkit-scrollbar-thumb {
+                background: var(--pokedexRed);
+                border-radius: 50px;
+              }
+
+              /* Handle on hover */
+              ::-webkit-scrollbar-thumb:hover {
+                background:var(--pokedexRed);
+                box-shadow: 3px 3px 30px var(--green-portal);
+              }
+
+/*Styles for the scroll bar end here*/  
+
+.pokedex-id-wrapper {
+    width: 100%;
+    height: 100%;
+    
+}
                   
