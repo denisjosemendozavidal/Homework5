@@ -30,13 +30,19 @@ const Pokedexid = () => {
   
   return (
     <article className='pokedex-id-wrapper'>
-      <img src={poke?.sprites.other.dream_world.front_default} alt="" />
-      <h1>{`${poke?.name}`}</h1>
-      {
-        poke?.moves.map(move => (
-          <li key={move.move.name}>{move.move.name}</li>
-        ))
-      }
+      <img className='pokedex-id-wrapper-img' src={poke?.sprites.other.dream_world.front_default} alt="" />
+      <h1 className='pokedex-id-wrapper-name'>{`${poke?.name}`}</h1>
+      <h4 className='pokedex-id-wrapper-id'>id</h4>
+      <h4 className='pokedex-id-wrapper-type'>Type</h4>
+      <h4 className='pokedex-id-wrapper-abilities'>Abilities</h4>
+      <h4 className='pokedex-id-wrapper-encounters'>Encounters</h4>
+      <div className='pokedex-id-wrapper-moves-wrapper'>
+        {
+          poke?.moves.map(move => (
+            <li key={move.move.name}>{move.move.name}</li>
+          ))
+        }
+      </div>
       
     </article>
   )

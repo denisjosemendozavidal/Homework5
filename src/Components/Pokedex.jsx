@@ -24,7 +24,7 @@ const Pokedex = () => {
           setPokemonlist(results)})
         .catch(err => console.log(err))
     } else {
-        const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1000`
+        const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1126`
     
         axios.get(url)
           .then(res => setPokemonlist(res.data.results))

@@ -47,7 +47,7 @@ const PokemonCard = ({pokemon, selectedtype}) => {
     <article onClick={handleCLick} className='pokecard'> 
         {
           pokemonCardInfo ?   <> 
-            <img className='pokecard-pic' src={`${pokemonCardInfo?.sprites.other[`official-artwork`].front_default}`} alt="" /> 
+            <img className='pokecard-pic' src={`${pokemonCardInfo?.sprites.other[`official-artwork`].front_default}`} alt="Loading..." /> 
             <h1 className='pokecard-tittle'>{`${nameUpper}`}</h1>
           </>
             :
