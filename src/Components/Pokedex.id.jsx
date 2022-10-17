@@ -84,24 +84,40 @@ const Pokedexid = () => {
       </div>
       <div className='pokedex-id-wrapper-id-type-abilities-wrapper'>
         <h4 className='pokedex-id-wrapper-id'>{` id :${poke?.id}`}</h4>
-        <div >
-          <h4 className='pokedex-id-wrapper-type'>Type</h4>
+        <div className='pokedex-id-wrapper-type-wrapper'>
+          <h4 className='pokedex-id-wrapper-type-tittle'>Type</h4>
+          <div className='pokedex-id-wrapper-type-wrapper-types-wrapper'>
             {
-              poke?.types.map(type => {
+              poke?.types.map(type => (
                 <li>{`${type.type.name}`}</li>
-              })
+              ))
             }
+          </div>
         </div>
-        <h4 className='pokedex-id-wrapper-abilities'>Abilities</h4>
-        <h4 className='pokedex-id-wrapper-encounters'>Encounters</h4>
+        <div className='pokedex-id-wrapper-abilities-wrapper'>
+          <h4 className='pokedex-id-wrapper-abilities-wrapper-title'>Abilities</h4>
+          <div className='pokedex-id-wrapper-abilities-wrapper-ability-wrapper'>
+            {
+              poke?.abilities.map(abilitie => (
+                <li key={abilitie.ability.name}>{abilitie.ability.name}</li>
+              ))
+            }
+
+          </div>
+
+        </div>
 
       </div>
       <div className='pokedex-id-wrapper-moves-wrapper'>
-        {
-          poke?.moves.map(move => (
-            <li key={move.move.name}>{move.move.name}</li>
-          ))
-        }
+        <h4 className='pokedex-id-wrapper-moves-wrapper-title'>Moves</h4>
+        <div className='pokedex-id-wrapper-moves-wrapper-move-wrapper'>
+          {
+            poke?.moves.map(move => (
+              <li key={move.move.name}>{move.move.name}</li>
+            ))
+          }
+
+        </div>
       </div>
       
     </article>
