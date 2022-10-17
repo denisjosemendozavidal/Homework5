@@ -205,15 +205,13 @@
                 width: 25%;
                 border-radius: 20px;
                 background: transparent;
-                color: var(--colorDarkWhite);
+                color: var(--pokedexRed);
                 font-size: large;
                 transition: 1s ease-in-out;
+                cursor: pointer;
             }
 
-                .pokedex-header-select:hover {
-                    color: var(--pokedexRed);
-                    transition: 1s ease-in-out;
-                }
+                
 
     .pokedex-body {
         height: 100%;
@@ -246,7 +244,7 @@
             }
 
                 .pokecard:hover {
-                    background-color: rgba(0,0,0,0.1);
+                    filter: drop-shadow(30px 10px 4px rgba(0,0,0,0.5));
                     transition: 0.5s ease-in-out;
                 }
 
@@ -305,13 +303,10 @@
                     transition: 0.5s ease-in;
                 }
 
-
-
                 .pressed {
                     background-color: var(--pokedexRed);
                     color: white;
                     transition: 0.5s ease-in;
-
                 }
 
        

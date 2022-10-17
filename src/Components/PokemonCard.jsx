@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Loading from './Loading'
 
 const PokemonCard = ({pokemon, selectedtype}) => {
 
@@ -43,9 +44,17 @@ const PokemonCard = ({pokemon, selectedtype}) => {
 
   return (
     
-    <article onClick={handleCLick} className='pokecard'>  
-        <img className='pokecard-pic' src={`${pokemonCardInfo?.sprites.other[`official-artwork`].front_default}`} alt="" />
-        <h1 className='pokecard-tittle'>{`${nameUpper}`}</h1>
+    <article onClick={handleCLick} className='pokecard'> 
+        {
+          pokemonCardInfo ?   <> 
+            <img className='pokecard-pic' src={`${pokemonCardInfo?.sprites.other[`official-artwork`].front_default}`} alt="" /> 
+            <h1 className='pokecard-tittle'>{`${nameUpper}`}</h1>
+          </>
+            :
+            <Loading/>
+          
+        }
+        
     </article>
   )
 }
