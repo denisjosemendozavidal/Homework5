@@ -16,7 +16,7 @@ const Pagination = ({totalPosts, postsPerPage, setCurrentPage, currentPage}) => 
     }
 
     return (
-        <div>
+        <div className='pagination-buttons'>
             {
                 pages.map((page, index) => (
                     <button key={index} onClick={() => handleClickOnPage(page)} className= {page == currentPage? "pressed" : ""}>{page}</button>
