@@ -160,7 +160,7 @@ li {
         }
 
             .pokedex-header-input {
-                width: 75%;
+                width: 90%;
                 text-align: center;
                 font-size: large;
                 font-weight: bolder;
@@ -544,4 +544,6 @@ li {
             background-color: var(--pokedexRed);
             transition: 1s ease-in-out;
         }
+
+
                   
