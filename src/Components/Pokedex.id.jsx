@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Pokemon404 from './Pokemon404'
 
 const Pokedexid = () => {
@@ -10,6 +10,7 @@ const Pokedexid = () => {
   const [poke, setPoke] = useState()
   const [notfound, setNotfound] = useState(false)
   const [background, setBackground] = useState()
+  const navigate = useNavigate()
 
   const idlower = id.toLowerCase()
 
@@ -72,12 +73,20 @@ const Pokedexid = () => {
     }
   }, [poke])
 
+
+  
+
+  const handleReturn = () => {
+      navigate(`/pokedex`)
+  }
+
   if (notfound) {
     return <Pokemon404/>
   }
   
   return (
         <article className='pokedex-id-wrapper' style={{background: `${background}`}}>
+          <button className='pokedex-id-wrapper-button' onClick={handleReturn}>Click here to go back.!</button>
           <div className='pokedex-id-wrapper-name-and-img'>
             <img className='pokedex-id-wrapper-img' src={poke?.sprites.other.dream_world.front_default} alt="" />
             <h1 className='pokedex-id-wrapper-name'>{`${poke?.name}`}</h1>
