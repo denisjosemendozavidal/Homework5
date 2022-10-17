@@ -10,9 +10,10 @@ const Pokemon404 = () => {
     }
 
   return (
-    <div className='notfound'>
-        <h1 className='notfound-title'>Pokemon not found</h1>
-        <button className='notfound-back-button' onClick={handleReturn}>Do you want to go back?</button>
+    <div className='notfound-wrapper'>
+        <img className='notfound-wrapper-img' src="../images/professor-oak.gif" alt="" />
+        <h1 className='notfound-wrapper-message'>Sorry, Pokemon not found, please try again.!</h1>
+        <button className='notfound-wrapper-button' onClick={handleReturn}>Click here to go back.!</button>
 
     </div>
   )

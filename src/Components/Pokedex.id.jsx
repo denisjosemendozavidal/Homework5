@@ -23,9 +23,7 @@ const Pokedexid = () => {
 
   }, [])
 
-  if (notfound) {
-    return <Pokemon404/>
-  }
+  
 
  
 
@@ -74,53 +72,56 @@ const Pokedexid = () => {
     }
   }, [poke])
 
-  
+  if (notfound) {
+    return <Pokemon404/>
+  }
   
   return (
-    <article className='pokedex-id-wrapper' style={{background: `${background}`}}>
-      <div className='pokedex-id-wrapper-name-and-img'>
-        <img className='pokedex-id-wrapper-img' src={poke?.sprites.other.dream_world.front_default} alt="" />
-        <h1 className='pokedex-id-wrapper-name'>{`${poke?.name}`}</h1>
-      </div>
-      <div className='pokedex-id-wrapper-id-type-abilities-wrapper'>
-        <h4 className='pokedex-id-wrapper-id'>{` id :${poke?.id}`}</h4>
-        <div className='pokedex-id-wrapper-type-wrapper'>
-          <h4 className='pokedex-id-wrapper-type-tittle'>Type</h4>
-          <div className='pokedex-id-wrapper-type-wrapper-types-wrapper'>
-            {
-              poke?.types.map(type => (
-                <li>{`${type.type.name}`}</li>
-              ))
-            }
+        <article className='pokedex-id-wrapper' style={{background: `${background}`}}>
+          <div className='pokedex-id-wrapper-name-and-img'>
+            <img className='pokedex-id-wrapper-img' src={poke?.sprites.other.dream_world.front_default} alt="" />
+            <h1 className='pokedex-id-wrapper-name'>{`${poke?.name}`}</h1>
           </div>
-        </div>
-        <div className='pokedex-id-wrapper-abilities-wrapper'>
-          <h4 className='pokedex-id-wrapper-abilities-wrapper-title'>Abilities</h4>
-          <div className='pokedex-id-wrapper-abilities-wrapper-ability-wrapper'>
-            {
-              poke?.abilities.map(abilitie => (
-                <li key={abilitie.ability.name}>{abilitie.ability.name}</li>
-              ))
-            }
+          <div className='pokedex-id-wrapper-id-type-abilities-wrapper'>
+            <h4 className='pokedex-id-wrapper-id'>{` id :${poke?.id}`}</h4>
+            <div className='pokedex-id-wrapper-type-wrapper'>
+              <h4 className='pokedex-id-wrapper-type-tittle'>Type</h4>
+              <div className='pokedex-id-wrapper-type-wrapper-types-wrapper'>
+                {
+                  poke?.types.map(type => (
+                    <li>{`${type.type.name}`}</li>
+                  ))
+                }
+              </div>
+            </div>
+            <div className='pokedex-id-wrapper-abilities-wrapper'>
+              <h4 className='pokedex-id-wrapper-abilities-wrapper-title'>Abilities</h4>
+              <div className='pokedex-id-wrapper-abilities-wrapper-ability-wrapper'>
+                {
+                  poke?.abilities.map(abilitie => (
+                    <li key={abilitie.ability.name}>{abilitie.ability.name}</li>
+                  ))
+                }
+
+              </div>
+
+            </div>
 
           </div>
+          <div className='pokedex-id-wrapper-moves-wrapper'>
+            <h4 className='pokedex-id-wrapper-moves-wrapper-title'>Moves</h4>
+            <div className='pokedex-id-wrapper-moves-wrapper-move-wrapper'>
+              {
+                poke?.moves.map(move => (
+                  <li key={move.move.name}>{move.move.name}</li>
+                ))
+              }
 
-        </div>
+            </div>
+          </div>
+          
+        </article>
 
-      </div>
-      <div className='pokedex-id-wrapper-moves-wrapper'>
-        <h4 className='pokedex-id-wrapper-moves-wrapper-title'>Moves</h4>
-        <div className='pokedex-id-wrapper-moves-wrapper-move-wrapper'>
-          {
-            poke?.moves.map(move => (
-              <li key={move.move.name}>{move.move.name}</li>
-            ))
-          }
-
-        </div>
-      </div>
-      
-    </article>
   )
 }
 
