@@ -533,7 +533,7 @@ li {
     width: 100%;
     height: 100%;
     gap: 5%;
-    background-image: url("../public/images/intro-poke.gif");
+    background-image: url("../images/intro-poke.gif");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
