@@ -1713,13 +1713,15 @@ li {
         min-height: 100vh;
         width: 100vw;
         display: flex;
-        background-color: black;
+        background: linear-gradient(90deg, #efefef2d, rgb(32, 32, 30));
+        background-color: rgb(32, 32, 30);
+        
     }
 
 
     .home-container {
         width: 100%;
-        height: 100%;
+        height: 70%;
         display: flex;
         justify-content: center;
         align-items: flex-end;
