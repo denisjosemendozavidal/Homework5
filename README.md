@@ -1,6 +1,6 @@
 # The Poke APP
 
-Netlify deployment: https://denis-mendoza-pokeapi.netlify.app/#/pokedex 
+Netlify deployment: https://denis-mendoza-pokeapi.netlify.app/
 
 Welcome, to my poke api, in this readme I’ll be going over the why, the idea, the concept and the structure behind the app. 
 
